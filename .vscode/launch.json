@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debugger: proxmox.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "proxmox.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--list",
+                "--pretty"
+            ],
+        }
+    ]
+}
