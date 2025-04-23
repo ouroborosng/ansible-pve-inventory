@@ -2,7 +2,9 @@
 
 [![License: GPL v3](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-This script, `proxmox.py`, is a dynamic inventory script for Ansible that automatically discovers virtual machines (VMs) and containers within a Proxmox VE cluster. It generates inventory data that Ansible can use to manage these resources efficiently.
+## About
+
+This script, `proxmox.py`, is a dynamic inventory script based on [Ansible-Proxmox-inventory](https://github.com/xezpeleta/Ansible-Proxmox-inventory). It enables Ansible to automatically discover virtual machines (VMs) and containers within a Proxmox VE cluster, generating inventory data that facilitates efficient resource management.
 
 ## Ansible Control Node Prerequisites
 
@@ -109,7 +111,7 @@ You can also pass connection details as command-line arguments, but this is not 
 ### Listing Hosts and Groups
 
 ```bash
-./proxmox.py --list
+./proxmox.py --list --pretty
 ```
 
 This command will output a JSON representation of your Proxmox VE inventory, including hosts, groups, and host variables.
@@ -125,13 +127,13 @@ Replace `<hostname>` with the name of a specific VM or container to get its deta
 ### Using Command-Line Arguments
 
 ```bash
-./proxmox.py --list --url https://<your_proxmox_ip_or_hostname>:8006/ --username <your_proxmox_username> --token <your_api_token_name> --secret <your_api_token_secret> --validate false
+./proxmox.py --list --pretty --url https://<your_proxmox_ip_or_hostname>:8006/ --username <your_proxmox_username> --token <your_api_token_name> --secret <your_api_token_secret> --validate false
 ```
 
 ### Filtering Network Interfaces
 
 ```bash
-./proxmox.py --list --exclude-iface "docker.*"
+./proxmox.py --list --pretty --exclude-iface "docker.*"
 ```
 
 Or configure it in `proxmox.json`:
